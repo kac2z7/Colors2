@@ -36,6 +36,8 @@ class colorsViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         cell.textLabel?.text = colors[indexPath.row]
         
+        cell.backgroundColor = UIColor.
+        
         return cell
     }
 
