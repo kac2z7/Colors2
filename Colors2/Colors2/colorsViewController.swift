@@ -10,7 +10,13 @@ import UIKit
 
 class colorsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
-    var colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown"]
+    var colors = [Color(name: "red", uicolor: UIColor.red),
+                  Color(name: "orange", uicolor: UIColor.orange),
+                  Color(name: "yellow", uicolor: UIColor.yellow),
+                  Color(name: "green", uicolor: UIColor.green),
+                  Color(name: "blue", uicolor: UIColor.blue),
+                  Color(name: "purple", uicolor: UIColor.purple),
+                  Color(name: "brown", uicolor: UIColor.brown)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +40,10 @@ class colorsViewController: UIViewController, UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
         
-        cell.textLabel?.text = colors[indexPath.row]
+        //let color = colors[indexPath.row]
         
-        cell.backgroundColor = UIColor.
+        cell.textLabel?.text = colors[indexPath.row].name
+        cell.backgroundColor = colors[indexPath.row].uicolor
         
         return cell
     }
@@ -52,3 +59,4 @@ class colorsViewController: UIViewController, UITableViewDelegate,UITableViewDat
     */
 
 }
+
